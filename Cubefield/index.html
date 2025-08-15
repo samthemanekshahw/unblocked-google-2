@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<meta content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+<title>Cubefield Unblocked - ubg235 GameDistribution</title>
+<style>﻿body {
+    background: #000000;
+    overflow:hidden;
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    background: #080808;
+}
+
+#gameContainer{
+    
+}
+
+#gui{
+    
+    position: absolute;
+    top:0;
+    left:0;
+    /*margin: 1vw;*/
+    width:100%;
+    height:100%;
+    
+    color:#fff;
+    text-align: center;
+    
+    cursor:default;
+    z-index: 999999;
+}
+
+#splash-logo{
+    background-image: url('splash.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+#sponsor-logo{
+    display:none;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    background-image: url('sponsor_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:bottom right;
+    width:20%;
+    height: 5%;
+    
+    cursor:pointer;
+    cursor:hand;
+}
+
+#score-text{
+    position:absolute;
+    top:10px;
+    left:10px;
+    font-size:4vw;
+}
+
+
+#pause-screen{
+    display:none;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:250px;
+    height:80px;
+    margin-left:-125px;
+    margin-top:-40px;
+    
+    cursor:pointer;
+    cursor:hand;
+}
+
+#speedup-screen{
+    display:none;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:200px;
+    height:50px;
+    margin-left:-100px;
+    margin-top:-25px;
+    font-size: 36px;
+    
+}
+
+#start-screen{
+    display:none;
+    position: absolute;
+    /*width: 550px;
+    height: 360px;*/
+    
+    left: 50%;
+    top: 50%;
+    margin-left: 0px;
+    margin-top: -180px;
+    
+    
+    text-align: center;
+    
+    width:90%;
+    max-width: 550px;
+    height: 90%;
+    max-height: 360px;
+}
+
+#start-screen-top{
+    height: 45%;
+}
+#txt-title{
+    color: #FFF;
+    text-align: center;
+    margin-top: 2px;
+}
+#txt-top-score{
+    position:absolute;
+    right:10px;
+    top:120px;
+    color:#FFF;
+    text-align: right;
+    margin-right: 10px;
+    
+}
+
+
+#start-screen-center{
+    height: 25%;
+    color:#FFF;
+    
+}
+#start-screen-bottom{
+    height: 20%;
+    width:50%;
+    color:#FFF;
+    
+    cursor:pointer;
+    cursor:hand;
+}
+#start-button{
+    position:absolute;
+    left:10px;
+    bottom:10px;
+    cursor:pointer;
+    /*cursor:hand;*/
+}
+
+
+
+
+.start-screen-child{
+    width:100%;
+    display:inline-block;
+    margin:2px;
+}
+
+
+.panel{
+    border-style:solid;
+    border-color:#FFF;
+    border-radius: 15px;
+    
+    background:rgba(128, 128, 128, 0.8);
+}
+
+.unselectable{
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.ui-loader {
+  display:none !important;
+}</style>
+</meta></head>
+<body style="overflow:hidden;">
+<div id="gameContainer"></div>
+<div id="gui"></div>
+<script type="text/javascript">
+    var gameName = "cubefield.min.js";
+
+    //This all here is for cache busting;
+    function addScript(src, buster, callback) {
+        var s = document.createElement('script');
+        s.setAttribute('src', src + '?v=' + buster);
+        if (typeof callback === 'function') {
+            s.onload = callback;
+        }
+        document.body.appendChild(s);
+    }
+
+    addScript('version.js', Date.now(), function () {
+        addScript(gameName, version, function () {
+            /**
+             * Here we create the game
+             */
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = Date.now();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-72005341-29', 'auto');
+            ga('set', 'appName', 'Cubefield');
+            ga('set', 'appVersion', version);
+            ga('send', 'pageview');
+        })
+    })
+</script>
+<script>function loadGoogleAnalytics(id) {
+    // Google tag (gtag.js)
+    var firstScript= document.getElementsByTagName("script")[0];
+    newScript= document.createElement("script");
+    newScript.async= "";
+    newScript.src= "https://www.googletagmanager.com/gtag/js?id="+ id;
+    firstScript.parentNode.insertBefore(newScript, firstScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', id);
+}
+
+window.addEventListener("load", function() {
+    if (navigator.webdriver) {
+      console.log('Bot Browser');
+      loadGoogleAnalytics("G-LE1ZGTPC77");
+
+    } else {
+      console.log('Human Browser');
+      loadGoogleAnalytics("G-E7D3EVY6HR");
+    }
+});
+</script>
+<script>function loadJS(FILE_URL, async = true) {
+  let scriptEle = document.createElement("script");
+
+  scriptEle.setAttribute("src", FILE_URL);
+  scriptEle.setAttribute("type", "text/javascript");
+  scriptEle.setAttribute("async", async);
+
+  document.body.appendChild(scriptEle);
+
+  // Success
+  scriptEle.addEventListener("load", () => {
+    console.log("ubg235 served!");
+  });
+
+   // Error
+  scriptEle.addEventListener("error", () => {
+    console.log("ubg235 error!");
+  });
+}
+
+window.addEventListener("load", function () {
+  loadJS("https://www.ubg235.com/js/ubg235_server_v1_0.js", true);
+});
+</script>
+</body>
+</html>
